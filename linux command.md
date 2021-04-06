@@ -331,7 +331,8 @@ connect remote mechine
 ```
  ssh username@hostname or ip
 ```
-create ssh key for secure connection. create key in local mechine and copy it on remote mechine
+#### create ssh key for secure connection. create key in local mechine and copy it on remote mechine
+
   * Generate Key on local machine
    ```
     ssh-keygen -t rsa -b 4096
@@ -343,10 +344,28 @@ create ssh key for secure connection. create key in local mechine and copy it on
     ssh-copy-id username@hostname or ip
    ```
 
-Create ssh connection using identity file (like aws ec2)
+#### Create ssh connection using identity file (like aws ec2)
+
   * Generate ssh key on remote machine
   ```
    ssh-keygen -t rsa -b 4096 -C "kvm"
    
    [-t type of encription, -b bits, -C comment]
+  ```
+  * Rename **id_rsa.pub** file to **authorized_keys**
+  ```
+   mv id_rsa.pub authorized_keys
+  ```
+  * Open **id_rsa** file of remote machine and copy this file content
+  ```
+   cat .ssh/id_rsa
+  ```
+  * Create .pem file in local machine and past **id_rsa** file content
+  ```
+   vi abc.pem
+  ```
+  * Connect remote machine using identity file
+  ```
+   ssh -i abc.pem username@hostname or ip
+   [-i = identity file location]
   ```
