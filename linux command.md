@@ -124,3 +124,43 @@ exit from scroller
 ```
 q
 ```
+
+## Working with text editor in linux terminal
+
+open a file command
+```
+ vi filename
+```
+insert in file vid editror
+```
+ press i
+```
+close insert option
+```
+ press Esc
+```
+exit from editor
+```
+ press :x then Enter
+```
+exit with save
+```
+ press :wq then enter
+```
+force exit
+```
+ press :q! then enter
+```
+Position the cursor at the beginning of the text you want to cut/copy.
+```
+ Press v to begin character-based visual selection, or V to select whole lines
+```
+Move the cursor to the end of the text to be cut/copied
+```
+ Press d (delete) to cut, or y (yank) to copy.
+```
+Move the cursor to the desired paste location.
+```
+ Press p to paste after the cursor, or P to paste before.
+```
+
