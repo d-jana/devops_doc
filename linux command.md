@@ -49,3 +49,34 @@ Kill running port
 ```
  fuser -k 8080/tcp
 ```
+
+## Working on FTP
+
+install ftp client in linux
+```
+ yum install lftp
+```
+connect ftp server
+```
+ ftp xxx.xxx.xxx.xxx
+```
+show files and folder of ftp server
+```
+ ls
+```
+print current working directory iside ftp
+```
+ lpwd
+```
+change local directory from ftp
+```
+ lcd path-of-directory  //Ex: lcd /home/docker
+```
+download file from ftp to local directory
+```
+ pget file-name //Ex: pget mysql.ta
+```
+takes file from local directory and upload to ftp server
+```
+ put file-name //Ex: put mysql.tar
+```
