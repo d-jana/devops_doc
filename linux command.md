@@ -199,6 +199,7 @@ show list of service
 systemctl list-unit-files **use --state=enabled show list of enabled service
 ```
 
+
 ## Linux user management
 
 to see details of file/dir like permissions, group, owner type bellow command
@@ -322,3 +323,30 @@ Allow everyone to read, write, and execute file.
 ```
  chmod 777 sample.txt
 ```
+
+
+## SSH Connection
+
+connect remote mechine
+```
+ ssh username@hostname or ip
+```
+create ssh key for secure connection. create key in local mechine and copy it on remote mechine
+  * Generate Key on local machine
+   ```
+    ssh-keygen -t rsa -b 4096
+
+    [-t type of encription, -b bits]
+   ```
+  * copy key to remote mechine
+   ```
+    ssh-copy-id username@hostname or ip
+   ```
+
+Create ssh connection using identity file (like aws ec2)
+  * Generate ssh key on remote machine
+  ```
+   ssh-keygen -t rsa -b 4096 -C "kvm"
+   
+   [-t type of encription, -b bits, -C comment]
+  ```
