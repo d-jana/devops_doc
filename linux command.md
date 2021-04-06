@@ -269,10 +269,14 @@ chmod mode filename
        |____________ [first digit]  - for user
 ```
 
-* **0** = No Permission      * **7** = Read & Write & Execute
-* **1** = Execute            * **3** = Write & Execute
-* **2** = Write              * **5** = Read & Execute
-* **4** = Read               * **6** = Read & Write
+* **0** = No Permission      
+* **1** = Execute            
+* **2** = Write              
+* **4** = Read               
+* **7** = Read & Write & Execute
+* **3** = Write & Execute
+* **5** = Read & Execute
+* **6** = Read & Write
 
 Read by owner only
 ```
