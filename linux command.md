@@ -369,3 +369,32 @@ connect remote mechine
    ssh -i abc.pem username@hostname or ip
    [-i = identity file location]
   ```
+
+## symbolic link (or "symlink")
+
+A symbolic link (or "symlink") is file system feature that can be used to create a link to a specific file or folder. 
+It is similar to a Windows "shortcut" or Mac "alias," but is not an actual file.
+
+There is two type of link 
+
+1) **soft link** - A soft link is an actual link to the original file
+
+   * create soft link
+   ```
+    ln -s ~/bin/topprocs.sh topps.sh
+   ```
+   * check it
+   ```
+    ls -l topps.sh
+   ```
+  
+2) **hard link** - is a mirror copy of the original file. Even if you delete the original file, the hard link will still has the data of the original file
+
+   * create hard link
+   ```
+    ln topprocs.sh tp
+   ```
+   * check it
+   ```
+    ls -l
+   ```
