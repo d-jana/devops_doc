@@ -1,5 +1,9 @@
-1. show all nodes
-<b> kubectl get nodes </b>
+#### show all nodes
+```
+kubectl get nodes
+```
 
-2. check kube ststem pods are running or not
-<b> kubectl get pods -n kube-system </b>
+#### check kube ststem pods are running or not
+```
+kubectl get pods -n kube-system
+```
