@@ -105,3 +105,22 @@ enter in usb device
 ```
   cd /media
 ```
+
+## Scrolling inside terminal
+
+see more lines in terminal
+```
+ your_command | less
+```
+scroll up
+```
+ shift - page up OR Up Arrow
+```
+scroll down
+```
+ shift - page down OR Down Arrow
+```
+exit from scroller
+```
+q
+```
