@@ -164,3 +164,38 @@ Move the cursor to the desired paste location.
  Press p to paste after the cursor, or P to paste before.
 ```
 
+## Create linux service
+
+create unit file name.service in /lib/systemd/system location
+```
+[Unit]
+Description=Example systemd service.
+
+**this is description of service which show on [systemctl status]
+
+[Service]
+ExecStart=/bin/bash /usr/bin/test_service.sh 
+ 
+**The critical part is the ExecStart directive, which specifies the command that will be run to start the service.
+
+[Install]
+WantedBy=multi-user.target
+
+**WantedBy= directive is the most common way to specify how a unit should be enabled
+**multi-user.target means that the systemd-service will start when the system reach runlevel 2.In linux have 7 runlevel. 
+**A runlevel is one of the modes that a Unix-based operating system will run in. 
+Each runlevel has a certain number of services stopped or started, giving the user control over the behavior of the machine
+```
+start and enable service
+```
+systemctl status service_name  **check status of service is running or not
+          start                **start a service
+          restart              **restart a service
+          stop                 **stop a service
+          enable               **start service on boot
+```
+show list of service
+```
+systemctl list-unit-files **use --state=enabled show list of enabled service
+```
+
