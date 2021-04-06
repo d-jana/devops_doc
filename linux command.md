@@ -398,3 +398,28 @@ There is two type of link
    ```
     ls -l
    ```
+
+
+## Give sudo privilege to a user
+
+open sudoers file
+```
+ sudo visudo
+```
+add user to sudoers file
+```
+ username ALL=(ALL) NOPASSWD:ALL
+```
+
+## user creation in Linux
+
+create user with HOME directory
+```
+ sudo useradd -m username
+ 
+ [-m to create the user with home directory]
+```
+add password
+```
+ sudo passwd username
+```
