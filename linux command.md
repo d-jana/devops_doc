@@ -9,6 +9,14 @@ list directory
 ```
  ls
 ```
+list of directory with detail
+```
+ ll
+```
+list of directory with hidden files
+```
+ ll -a
+```
 change directory
 ```
  cd dirname
@@ -79,4 +87,21 @@ download file from ftp to local directory
 takes file from local directory and upload to ftp server
 ```
  put file-name //Ex: put mysql.tar
+```
+
+## Working on USB
+
+show block list device with details. They show UUID, LABEL, NAME
+```
+ blkid
+```
+mount usb device which show on blkid command
+```
+  mount -L HP /media (..using label name)
+  mount -U BXXX-XXXX (..using UUID)
+  mount -t auto /dev/sda /media (..using name)
+```
+enter in usb device
+```
+  cd /media
 ```
