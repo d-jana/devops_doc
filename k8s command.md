@@ -3,7 +3,7 @@
 kubectl get nodes
 ```
 
-#### check kube ststem pods are running or not
+#### check kube ststem related pods are running or not
 ```
 kubectl get pods -n kube-system
 ```
