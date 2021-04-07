@@ -3,6 +3,8 @@ Git is a version control system for tracking changes in computer files and coord
 It is primarily used for source code management in software development, but it can be used to keep track of changes in any set of files.
 It also as a DevOps tools
 
+## What is Staging area in GIT?
+The working area is where files that are not handled by git. These files are also referred to as **untracked files**. **Staging area** is files that are going to be a part of the next commit, which lets git know what changes in the file are going to occur for the next commit.
 ##
 ##
 
@@ -19,4 +21,46 @@ git clone [repo url]
 initialize an existing directory as a Git repository
 ```
 git init
+```
+
+### STAGE & COMMIT
+
+shows the current state of your Git working directory and staging area
+```
+git status
+```
+Add files to the staging area 
+```
+git add [file]
+```
+unstage a file from staging area
+```
+git reset [file]
+```
+restore the uncommitted local changes of files
+```
+git restore [file]
+```
+diff of what is changed but not staged
+```
+git diff
+```
+commit your staged content. commit is the term used for saving changes
+```
+git commit -m “[descriptive message]”
+```
+
+### PUSH, PULL and FETCH
+
+add a git URL as an alias
+```
+git remote add [alias] [repo url]
+```
+Transmit local branch commits to the remote repository branch
+```
+git push [alias] [branch]
+```
+fetch and merge any commits from the tracking remote branch
+```
+git pull
 ```
