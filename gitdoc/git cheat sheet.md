@@ -12,11 +12,11 @@ set automatic command line coloring for Git for easy reviewing
 ```
 git config --global color.ui auto
 ```
-initialize an existing directory as a Git repository
-```
-git init
-```
 retrieve an entire repository from github
 ```
 git clone [repo url]
+```
+initialize an existing directory as a Git repository
+```
+git init
 ```
