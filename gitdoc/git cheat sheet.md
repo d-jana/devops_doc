@@ -29,7 +29,7 @@ shows the current state of your Git working directory and staging area
 ```
 git status
 ```
-Add files to the staging area 
+Add files to the staging area for next commit
 ```
 git add [file]
 ```
@@ -41,16 +41,20 @@ restore the uncommitted local changes of files
 ```
 git restore [file]
 ```
-diff of what is changed but not staged
+show changes to files in the worked area (after staged not showing diff)
 ```
 git diff
+```
+show changes to files in the staged area (after commit not showing diff)
+```
+git diff --staged
 ```
 commit your staged content. commit is the term used for saving changes
 ```
 git commit -m “[descriptive message]”
 ```
 
-### PUSH, PULL and FETCH
+### PUSH, PULL
 
 add a git URL as an alias
 ```
@@ -63,4 +67,28 @@ git push [alias] [branch]
 fetch and merge any commits from the tracking remote branch
 ```
 git pull
+```
+
+### BRANCH & MERGE
+
+show all branches. a * will appear next to the currently active branch
+```
+git branch
+```
+create a new branch. branch will be made after commit
+```
+git branch [branch-name]
+```
+switch to another branch
+```
+git checkout [branch-name]
+```
+merge current branch from a remote branch
+```
+git merge [alias]/[branch]
+
+Example: suppose master branch will be merge from prod branch
+git checkout master
+git merge origin/prod
+git push origin master
 ```
