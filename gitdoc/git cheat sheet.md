@@ -43,6 +43,10 @@ unstage a file from staging area
 ```
 git reset [file]
 ```
+reset a current commit 
+```
+git reset --soft [alias]/[branch]
+```
 restore the uncommitted local changes of files
 ```
 git restore [file]
