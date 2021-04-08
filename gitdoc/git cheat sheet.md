@@ -119,11 +119,11 @@ show the diff of what is in branchA that is not in branchB
 
 ### REMOVE & IGNORING
 
-Removes the file only from the Staging area, but not from the working area
+Removes the file only from the Staging area, but not from the working area. After commit and push it will be remove from repo
 ```
 git rm [file] --cached
 ```
-Recursively removes folder only from the Git repository, but not from the working area
+Recursively removes folder only from the Git repository, but not from the working area. After commit and push it will be remove from repo
 ```
 git rm -r [folder] --cached
 ```
