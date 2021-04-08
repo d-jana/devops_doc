@@ -133,3 +133,15 @@ Recursively removes folder only from the Git repository, but not from the workin
 ```
 git rm -r [folder] --cached
 ```
+Ignore a file or folder on git add. Create **.gitignore** file in project root directory and write content like this -
+```
+# If want to ignore everything
+*
+# If want to ignore file or folder just write file or folder name
+logs
+.idea
+# Allow those folder which don't want to ignore
+!src
+!build
+
+```
