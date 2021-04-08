@@ -46,7 +46,7 @@ commit your staged content. commit is the term used for saving changes
 git commit -m “[descriptive message]”
 ```
 
-### PUSH, PULL
+### PUSH & PULL
 
 add a git URL as an alias
 ```
