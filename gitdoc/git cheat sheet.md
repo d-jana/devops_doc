@@ -113,5 +113,3 @@ git branch -d dev
 3rd - delete from remote
 git push origin --delete dev
 ```
-
-```
