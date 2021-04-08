@@ -8,6 +8,12 @@ The working area is where files that are not handled by git. These files are als
 ##
 ##
 
+```
+To use multiple file write each file with space on any command where give file name. like:
+
+git add file1 file2 file3 ...
+```
+
 ### SETUP & INIT
 
 set automatic command line coloring for Git for easy reviewing
