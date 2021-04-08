@@ -99,17 +99,26 @@ git diff [banchA] [branchB]
 show the diff of what is in branchA that is not in branchB
 ```
 delete a branch from local and remote
-```
-from local
-git branch -d [branch]
-from remote
-git push origin --delete [branch]
+  from local
+    ```
+    git branch -d [branch]
+    ```
+  from remote
+    ```
+    git push origin --delete [branch]
+    ```
 
-Example: delete dev branch
-1st - checkout to another branch
-git checkout master
-2nd - delete from local
-git branch -d dev
-3rd - delete from remote
-git push origin --delete dev
-```
+  Example: delete dev branch
+    1st - checkout to another branch
+    ```
+    git checkout master
+    ```
+    2nd - delete from local
+    ```
+    git branch -d dev
+    ```
+    3rd - delete from remote
+    ```
+    git push origin --delete dev
+    ```
+
