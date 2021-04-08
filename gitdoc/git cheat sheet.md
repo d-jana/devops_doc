@@ -41,14 +41,6 @@ restore the uncommitted local changes of files
 ```
 git restore [file]
 ```
-show changes to files in the worked area (after staged not showing diff)
-```
-git diff
-```
-show changes to files in the staged area (after commit not showing diff)
-```
-git diff --staged
-```
 commit your staged content. commit is the term used for saving changes
 ```
 git commit -m “[descriptive message]”
@@ -87,12 +79,6 @@ merge current branch from a remote branch
 ```
 git merge [alias]/[branch]
 ```
-show diff between two branch
-```
-git diff [banchA] [branchB]
-
-show the diff of what is in branchA that is not in branchB
-```
 delete a branch from local and remote
 
   * from local
@@ -106,4 +92,38 @@ delete a branch from local and remote
     ```
     
 
+### INSPECT & COMPARE
 
+show the commit history for the currently active branch
+```
+git log
+```
+show commit history of a particular file
+```
+git log --follow [file]
+```
+show changes to files in the worked area (after staged not showing diff)
+```
+git diff
+```
+show changes to files in the staged area (after commit not showing diff)
+```
+git diff --staged
+```
+show diff between two branch
+```
+git diff [banchA] [branchB]
+
+show the diff of what is in branchA that is not in branchB
+```
+
+### REMOVE & IGNORING
+
+Removes the file only from the Staging area, but not from the working area
+```
+git rm [file] --cached
+```
+Recursively removes folder only from the Git repository, but not from the working area
+```
+git rm -r [folder] --cached
+```
