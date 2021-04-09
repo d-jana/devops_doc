@@ -1,0 +1,9 @@
+### dockerignore is used to reduce image size and for fast build
+
+# Ignore everything 
+*
+# Allow those folder which you want to copy in docker image
+!target/quarkus-app/lib/
+!target/quarkus-app/*.jar
+!target/quarkus-app/app/
+!target/quarkus-app/quarkus/
