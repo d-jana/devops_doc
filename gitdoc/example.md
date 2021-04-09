@@ -9,6 +9,13 @@ on git add
 6) git push origin master
 ```
 
+### Push a project after change
+```
+git add .
+git commit -m "first commit"
+git push origin master
+```
+
 ###  Suppose you want to merge [dev] branch with [master] branch
 ```
 1) git checkout master
@@ -40,6 +47,22 @@ on git add
 2) Unstage specific files or folders which want to ignore from next commit
 
   git reset log.txt test.txt
+
+3) git commit and push
 ```
 
+### If you want to restore a deleted file after commit
+```
+1) clean current commit
+
+  git reset --soft origin/master
+  
+2) Do unstage
+  
+  git reset [. or files name]
+  
+3) Restore files 
+
+  git restore [. or files name]
+```
 
