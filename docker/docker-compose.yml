@@ -1,0 +1,82 @@
+#set version of compose file
+version: '2.3'
+#create service
+services:
+  #service name
+  eureka:
+    #container name
+    container_name: eureka
+    #set docker file path and file name
+    build:
+      #path
+      context: ./eureka
+      #filename
+      dockerfile: Dockerfile
+    #image name
+    image: eureka:latest
+    # The container will also always start on daemon startup
+    restart: always
+    # use syslog driver to manage log of container
+    logging:
+      driver: syslog
+      options:
+        # this is syslog server address.
+        # If we use elk stack then we use ip and port of logstash
+        syslog-address: "tcp://logstash:5000"
+        # this is format of log. It is optional
+        syslog-format: "rfc3164"
+        # this is app-name which do identify of each container logs
+        # here we use tag name as container name
+        tag: "eureka"
+    #set environment variable
+    #Environment variable help you to set spring boot application.properties config at runtime
+    #like - spring.cloud.config.uri: http://configserver:8888
+    environment:
+        SERVER_NAME: demoserver
+    #set expose on which run container.this is usefull at scalling
+    expose:
+      - "1883"
+      - "1884"
+    #set port on which run container
+    ports:
+    - "8761:8761"
+    #- "8761-8768:8761" this is port range
+    # to run a command in docker container
+    command: use any command to run in docker container
+    #links is used to connect one cotainer with other. links is used for bridge network(default network)
+    #bridge network is default network at docker.if we not declare network this added by default with container
+    #but if we use user created network to all container then they are reachable by each other using their container name
+    links:
+      - db
+    #choose network
+    networks:
+      - microservice
+  #-------------------------------------#
+  # Don't use container_name,ports of a #
+  # service which you can do scale up   #
+  # and down.also we use expose         #
+  # replace to port                      #
+  #-------------------------------------#
+  product-service:
+    build:
+      context: ./product-service
+      dockerfile: Dockerfile
+    image: product:latest
+    depends_on:
+      - eureka
+    networks:
+      - microservice
+  zuul:
+    build:
+      context: ./zuul
+      dockerfile: Dockerfile
+    image: zuul:latest
+    ports:
+    - "8765:8765"
+    depends_on:
+      - eureka
+    networks:
+      - microservice
+#create network
+networks:
+  microservice:
