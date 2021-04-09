@@ -31,13 +31,15 @@ on git add
    git push origin --delete dev
  ```
 
-### If you want to return previous state after commit
+### If your commit is done but you want to ignore a file or folder from current commit  
 ```
-1) Undo the current commit
+1) clean current commit
 
   git reset --soft origin/master
   
-3) Undo from staged area
+2) Unstage specific files or folders which want to ignore from next commit
 
-  git reset .
+  git reset log.txt test.txt
 ```
+
+
