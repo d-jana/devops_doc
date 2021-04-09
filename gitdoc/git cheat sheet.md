@@ -43,7 +43,7 @@ unstage a file from staging area
 ```
 git reset [file]
 ```
-reset a current commit 
+clean a current commit 
 ```
 git reset --soft [alias]/[branch]
 ```
