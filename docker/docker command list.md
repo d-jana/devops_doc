@@ -173,6 +173,8 @@ docker exec -it [container id or name] bash
 
 ### Docker network
 
+##### If each container have in same network then they can communicate between each other
+
 create a network
 ```
 docker network create [name]
