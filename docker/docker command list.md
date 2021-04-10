@@ -82,3 +82,18 @@ push a image
   
   EX: docker push localhost:8080/demoapp
 ```
+
+### Docker container
+
+run docker image as a container
+```
+docker run --name [assign a name of container] -d -p [host port:containerport] -e [enviorment variable name=value] 
+-v [host file or dir path:container file or dir path] --net [network name]  --restart=always [name of image]:[tag]
+```
+  * **--name** assign name of a container
+  * **-d** dituch mode. if want to run the container background
+  * **-p host port:container port** Publish a container's port to the host port
+  * **-e** set enviorment variable for docker container. ex: -e MYSQL_ROOT_PASSWORD=123
+  * **-v** to mount container volume to the host volume. ex: -v /home/abc/file.key:/data/file.key
+  * **--net** assign a network for container. if we don't use **--net** then it by default take bridge network
+  * **--restart=always** docker container restart automatically when docker is restart
