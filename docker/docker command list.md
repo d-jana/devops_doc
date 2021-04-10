@@ -97,3 +97,70 @@ docker run --name [assign a name of container] -d -p [host port:containerport] -
   * **-v** to mount container volume to the host volume. ex: -v /home/abc/file.key:/data/file.key
   * **--net** assign a network for container. if we don't use **--net** then it by default take bridge network
   * **--restart=always** docker container restart automatically when docker is restart
+
+show running container
+```
+docker ps
+```
+show all container
+```
+docker ps -a
+```
+start, stop and restart a container
+```
+docker start [container id or name]
+       stop
+       restart
+```
+push and unpush a container
+```
+docker container pause [container id or name]
+                 unpause
+```
+show details about of an container
+```
+docker container inspect [container id or name]
+```
+delete a container
+```
+docker rm -f [container id or name]
+```
+  * **-f** for force delete. If a container is running then it force delete
+
+to remove all the stop container
+```
+docker container prune
+```
+show details about of an container
+```
+docker container inspect [container id or name]
+```
+copy file from local drive to docker container
+```
+docker cp [local file path] [container id or name]:[path in docker container where paste the file]
+
+Ex: docker cp app.txt db280a3413f5:/home/dipak/app.txt
+```
+copy file from docker container to local drive
+```
+docker cp [container id or name]:[path in docker container where paste the file] [local file path]
+
+Ex: docker cp db280a3413f5:/home/dipak/app.txt app.txt
+```
+change name of docker container
+```
+docker rename [container id or old name] [new name]
+```
+show logs of container
+```
+docker logs [container id or name]
+```
+show current logs of container
+```
+docker logs -f [container id or name]
+```
+execute an interactive bash shell on the container.
+```
+docker exec -it [container id or name] bash
+```
+  * This will create a new Bash session in the container 
