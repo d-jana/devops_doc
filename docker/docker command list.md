@@ -131,7 +131,7 @@ to remove all the stop container
 ```
 docker container prune
 ```
-show details about of an container
+show details about of a container
 ```
 docker container inspect [container id or name]
 ```
@@ -163,4 +163,28 @@ execute an interactive bash shell on the container.
 ```
 docker exec -it [container id or name] bash
 ```
-  * This will create a new Bash session in the container 
+  * this will create a new bash session in the container 
+
+
+### Docker network
+
+create a network
+```
+docker network create [name]
+```
+show list of network
+```
+docker network ls
+```
+show details about of a network
+```
+docker network inspect [network id or name]
+```
+delete a network
+```
+docker network remove [network id or name]
+```
+clean up unuse network's
+```
+docker network prune
+```
