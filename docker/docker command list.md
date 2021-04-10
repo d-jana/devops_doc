@@ -8,6 +8,9 @@ enable docker demon
 ```
 systemctl enable docker
 ```
+
+##
+
 ### Docker image
 
 create docker image. Remember when create docker image must add docker ignore(.dockerignore) file
@@ -82,6 +85,7 @@ push a image
   
   EX: docker push localhost:8080/demoapp
 ```
+##
 
 ### Docker container
 
@@ -165,6 +169,7 @@ docker exec -it [container id or name] bash
 ```
   * this will create a new bash session in the container 
 
+##
 
 ### Docker network
 
