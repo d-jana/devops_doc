@@ -195,6 +195,10 @@ clean up unuse network's
 ```
 docker network prune
 ```
+connect a container with existing network
+```
+docker network connect [network name or id] [container name or id]
+```
 
 ##
 
