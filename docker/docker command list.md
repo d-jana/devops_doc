@@ -196,4 +196,4 @@ clean up unuse network's
 docker network prune
 ```
 
-![alt text](https://github.com/dipakongit/devops_doc/blob/main/docker/images/download.jpeg?raw=true)
+[](https://github.com/dipakongit/devops_doc/blob/main/docker/images/download.jpeg?raw=true)
