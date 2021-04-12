@@ -183,7 +183,7 @@ show list of network
 ```
 docker network ls
 ```
-show details about of a network
+show details of a network
 ```
 docker network inspect [network id or name]
 ```
@@ -196,3 +196,29 @@ clean up unuse network's
 docker network prune
 ```
 
+##
+
+### Docker volume
+
+##### Volumes are the preferred way to persist data in Docker containers. Some use cases for volumes is Sharing data among multiple running containers
+
+create a volume
+```
+docker volume create [name]
+```
+show list of volume
+```
+docker volume ls
+```
+show details of a volume
+```
+docker volume inspect [name]
+```
+delete a volume
+```
+docker volume remove [name]
+```
+clean up unuse volume
+```
+docker volume prune
+```
