@@ -32,6 +32,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 I have 3 microservice eureka,product-service,zuul and one mongo database.
 
 Create Dockerfile to each microservice.
+
 ![](https://github.com/dipakongit/devops_doc/blob/main/docker/images/3.png)
 
 
