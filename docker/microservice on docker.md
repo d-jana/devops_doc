@@ -35,4 +35,5 @@ Create Dockerfile to each microservice.
 
 ![](https://github.com/dipakongit/devops_doc/blob/main/docker/images/3.png)
 
+Then create docker-compose.yml file. Click on this link [docker-compose.yml](https://github.com/dipakongit/devops_doc/blob/main/docker/docker-compose.yml) to see docker-compose file content
 
