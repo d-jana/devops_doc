@@ -1,5 +1,5 @@
-#set version of compose file
-version: '2.3'
+#set version of docker compose
+version: '2.2'
 #create service
 services:
   #service name
@@ -16,46 +16,43 @@ services:
     image: eureka:latest
     # The container will also always start on daemon startup
     restart: always
-    # use syslog driver to manage log of container
-    logging:
-      driver: syslog
-      options:
-        # this is syslog server address.
-        # If we use elk stack then we use ip and port of logstash
-        syslog-address: "tcp://logstash:5000"
-        # this is format of log. It is optional
-        syslog-format: "rfc3164"
-        # this is app-name which do identify of each container logs
-        # here we use tag name as container name
-        tag: "eureka"
+
+   # use syslog driver to manage log of container
+   logging:
+    driver: syslog
+    options:
+      # this is a syslog server address.
+      # If we use elk stack then we use ip and port of logstash
+      syslog-address: "tcp://172.17.0.1:5000"
+     # This is the format of log. It is optional
+     syslog-format: "rfc3164"
+     # this is app-name which do identify of each container logs
+     # here we use tag name as container name
+     tag: "node-red”
+
     #set environment variable
     #Environment variable help you to set spring boot application.properties config at runtime
     #like - spring.cloud.config.uri: http://configserver:8888
     environment:
         SERVER_NAME: demoserver
-    #set expose on which run container.this is usefull at scalling
-    expose:
-      - "1883"
-      - "1884"
     #set port on which run container
     ports:
     - "8761:8761"
-    #- "8761-8768:8761" this is port range
     # to run a command in docker container
     command: use any command to run in docker container
-    #links is used to connect one cotainer with other. links is used for bridge network(default network)
-    #bridge network is default network at docker.if we not declare network this added by default with container
-    #but if we use user created network to all container then they are reachable by each other using their container name
+
+    #Basically, links is no longer needed because its main purpose,to connect one cotainer with other. 
+    #When containers are placed in the same network, they are reachable by each other using their container name and other alias as host
     links:
       - db
+
     #choose network
     networks:
       - microservice
   #-------------------------------------#
   # Don't use container_name,ports of a #
   # service which you can do scale up   #
-  # and down.also we use expose         #
-  # replace to port                      #
+  # and down                            #
   #-------------------------------------#
   product-service:
     build:
@@ -66,6 +63,7 @@ services:
       - eureka
     networks:
       - microservice
+      - mongodb
   zuul:
     build:
       context: ./zuul
@@ -79,4 +77,14 @@ services:
       - microservice
 #create network
 networks:
+  #Here mongodb is pre pre-existing network.
+  #If you want your containers to join a pre-existing network, use the external option
+  mongodb:
+    #it is use to join containers with pre-existing network
+    external: true
+    #this is the alias name of network
+    name: mongodb
+  #When we define a network without external it is custom network.
+  #it created when service is created and removed automatically when service is removed
   microservice:
+    name: microservice
