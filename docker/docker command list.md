@@ -13,6 +13,9 @@ systemctl enable docker
 
 ### Docker image
 
+A Docker image is a read-only template that contains a set of instructions for creating a container that can run on the Docker platform.
+
+
 create docker image. Remember when create docker image must add docker ignore(.dockerignore) file
 [check .dockerignore file sample](https://github.com/dipakongit/devops_doc/blob/main/docker/.dockerignore)
 ```
@@ -226,3 +229,6 @@ clean up unuse volume
 ```
 docker volume prune
 ```
+
+### Why use dockerignore?
+
