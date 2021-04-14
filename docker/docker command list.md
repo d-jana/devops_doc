@@ -232,6 +232,19 @@ clean up unuse volume
 docker volume prune
 ```
 
+##
+
 ### Why use dockerignore?
 
 dockerignore is used to reduce image size and to decrese build time. [check .dockerignore file sample](https://github.com/dipakongit/devops_doc/blob/main/docker/.dockerignore)
+
+
+##
+
+### Save & Load
+
+back up our image
+```
+docker save -o <path for generated tar file> <image name>
+```
+
