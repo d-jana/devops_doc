@@ -243,8 +243,49 @@ dockerignore is used to reduce image size and to decrese build time. [check .doc
 
 ### Save & Load
 
-back up our image
+back up image
 ```
-docker save -o <path for generated tar file> <image name>
+docker save -o [path for generated tar file] [image name or id]
+```
+load an existing image
+```
+docker load -i [path to image tar file]
+```
+
+
+##
+
+### MySql on DOCKER
+
+```
+docker run --name mysql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123 mysql:latest
+```
+  * Here we give **MYSQL_ROOT_PASSWORD** at runtime
+  
+go to mysql sell
+```
+docker exec -it mysql bash
+        or
+docker exec -it mysql sh (if above is not working then try it)
+```
+
+### MongoDB on DOCKER
+
+```
+docker run -d --name mongo -p27017:27017 --restart=always mongo --auth
+```
+  * **--auth** use to enable mongodb authentication
+  
+go to mongodb sell
+```
+docker exec -it mongo bash
+        or
+docker exec -it mongo sh (if above is not working then try it)
+```
+
+### run centos docker container image
+
+```
+docker run -d --tmpfs /tmp --tmpfs /run -v /sys/fs/cgroup:/sys/fs/cgroup:ro --cap-add=NET_ADMIN --cap-add=NET_RAW --restart=always --name centos --stop-signal SIGRTMIN+3 centos
 ```
 
