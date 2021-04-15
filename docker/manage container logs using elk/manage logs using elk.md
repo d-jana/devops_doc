@@ -48,3 +48,49 @@ The syslog logging driver routes logs to a syslog server. The syslog protocol us
 syslog driver as the default logging driver which already have in docker. 
 
 
+### Script details of logstash.conf file
+```
+input {
+  syslog {
+     port => 5000
+     type => "docker"
+  }
+}
+
+filter {
+  grok {
+    match => [“message”,”%{GREEDYDATA}”]
+  }
+}
+
+output {
+  stdout {
+    codec => rubydebug
+  }
+  elasticsearch {
+    hosts => ["elasticsearch:9200"]
+  }
+}
+```
+
+#### Input section
+
+Input section defines from where Logstash will read input data. Here we use syslog of docker container. Here  also we can use log file location to read log from log file. 
+To use log file - 
+input {
+  file {
+     type => "java"
+     path => "location of log file"
+  }
+}
+
+#### Filter section
+
+Filter section contains plugins that perform intermediary processing on an a log event. In our case, event will either be a single log line or multiline log event grouped according to the rules described above. In the filter section we will do several things:
+    * Tag a log event if it contains a stacktrace. This will be useful when searching for exceptions later on.
+    * Parse out (or grok, in logstash terminology) timestamp, log level, pid, thread, class name (logger actually) and log message.
+    * Specified timestamp field and format — Kibana will use that later for time based searches.
+
+#### Output section
+
+Output section contains output plugins that send event data to a particular destination. Outputs are the final stage in the event pipeline. We will be sending our log events to stdout (console output, for debugging) and to Elasticsearch.
