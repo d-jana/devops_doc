@@ -24,6 +24,9 @@ Create [docker-compose.yml](https://github.com/dipakongit/devops_doc/blob/main/d
 [logstash.conf](https://github.com/dipakongit/devops_doc/blob/main/docker/manage%20container%20logs%20using%20elk/logstash.conf), 
 [Dockerfile](https://github.com/dipakongit/devops_doc/blob/main/docker/manage%20container%20logs%20using%20elk/Dockerfile) at same directory 
 
+* Elasticsearch default port ```9200```
+* Kibana default port ```5601```
+
 ### We use Syslog driver to get logs of each container
 
 The syslog logging driver routes logs to a syslog server. The syslog protocol uses a raw string as the log message and supports a limited set of metadata. The syslog message must be formatted in a specific way to be valid. From a valid message, the receiver can extract the following information:
@@ -43,3 +46,5 @@ The syslog logging driver routes logs to a syslog server. The syslog protocol us
 2017-04-01T17:41:05.616647+08:00 a.vm {taskid:aa,version:} 1787791 {taskid:aa,version:}
 ```
 syslog driver as the default logging driver which already have in docker. 
+
+
