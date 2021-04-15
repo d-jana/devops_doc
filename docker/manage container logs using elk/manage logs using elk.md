@@ -24,8 +24,8 @@ Create [docker-compose.yml](https://github.com/dipakongit/devops_doc/blob/main/d
 [logstash.conf](https://github.com/dipakongit/devops_doc/blob/main/docker/manage%20container%20logs%20using%20elk/logstash.conf), 
 [Dockerfile](https://github.com/dipakongit/devops_doc/blob/main/docker/manage%20container%20logs%20using%20elk/Dockerfile) at same directory 
 
-* Elasticsearch default port ```9200```
-* Kibana default port ```5601```
+* Elasticsearch default port ```9200```. URL ```http://localhost:9200```
+* Kibana default port ```5601```. URL ```http://localhost:5601```
 
 ### We use Syslog driver to get logs of each container
 
