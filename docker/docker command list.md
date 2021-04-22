@@ -290,7 +290,6 @@ docker exec -it mongo sh (if above is not working then try it)
 
 ```
 docker run -d --tmpfs /tmp --tmpfs /run -v /sys/fs/cgroup:/sys/fs/cgroup:ro --cap-add=NET_ADMIN --cap-add=NET_RAW --restart=always --name centos --stop-signal SIGRTMIN+3 centos
-
-if want to run docker in docker then use --privileged
 ```
+  * if want to run docker in docker then use **--privileged**
 
