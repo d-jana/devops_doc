@@ -204,7 +204,10 @@ connect a container with existing network
 ```
 docker network connect [network name or id] [container name or id]
 ```
-
+disconnect a container with existing network
+```
+docker network disconnect [network name or id] [container name or id]
+```
 ##
 
 ### Docker volume
