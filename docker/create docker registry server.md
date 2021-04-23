@@ -28,3 +28,7 @@ must be use your host name ```jenkins.server``` as a CN (Common Name)
 ```
 docker run -d --restart=always --name registry -v /certs:/certs -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/ca.crt -e REGISTRY_HTTP_TLS_KEY=/certs/ca.key -p5000:5000 registry
 ```
+
+### Setup other Docker host from which we do pull and push operation
+
+6. Define registry server host name and ip address to /etc/hosts file on every Docker host
