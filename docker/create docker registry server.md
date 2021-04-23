@@ -16,7 +16,7 @@ docker pull registry
 
 ### Use self-signed certificates
 
-3. Generate your own certificate
+4. Generate your own certificate
 ```
 mkdir certs
 
@@ -24,3 +24,7 @@ openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/ca.key -x509 -days 365
 ```
 must be use your host name ```jenkins.server``` as a CN (Common Name)
 
+5. Use following command to start registry container
+```
+docker run -d --restart=always --name registry -v /certs:/certs -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/ca.crt -e REGISTRY_HTTP_TLS_KEY=/certs/ca.key -p5000:5000 registry
+```
