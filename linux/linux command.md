@@ -33,6 +33,10 @@ make directory
 ```
  mkdir dirname
 ```
+make sub-directory with parent
+```
+ mkdir -p maindir/subdir
+```
 remove empty directory
 ```
  rmdir dirname
