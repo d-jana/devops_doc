@@ -67,4 +67,4 @@ then you can see this popup window
   * Set **Content type = application/json**
   * Choose **Just the push event**
   
- **Add Webhook**
+ Then click **Add Webhook**
