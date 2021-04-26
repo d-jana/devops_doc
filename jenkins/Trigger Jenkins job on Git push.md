@@ -62,8 +62,8 @@ then you can see this popup window
   * Check **Specify another hook URL for GitHub configuration** 
   * Copy webhook URL
 
-2) Goto your github repository > Go **Setting** Tab > Click **Webhooks** > Click **Add Webhook**
+2) Goto your github repository > Go **Setting** Tab > Click **Webhooks** > Click **Add Webhook** >
   * Past **webhook Url** in **Payload URL**
   * Set **Content type = application/json**
   * Choose **Just the push event**.
-> **Add Webhook**
+ **Add Webhook**
