@@ -28,5 +28,42 @@ Public key and Private key file
 
 2) then click **Add SSH Key**
 
+
 ### SSH setup to Jenkins
 
+* Go to **jenkins** 
+* create free style project 
+* configure
+* Source Code Management tab 
+* Select Git 
+* Give Repository Url(ssh). Ex: git@github.com:dipakongit/devops_doc.git
+* Click Add dropdown 
+* Click Jenkins
+
+then you can see this popup window
+
+![](https://github.com/dipakongit/devops_doc/blob/main/jenkins/images/j4.png)
+
+* Select **Kind** - SSH Username and private key 
+* **Username** - any name – 
+* **Private key** - Select Enter directly 
+* Click **Add** 
+* Copy id_rsa (private key) content and past it 
+* Add
+
+## Git webhook setup for Jenkins
+
+1) Get webhook Url from Jenkins
+  * Go to jenkins
+  * Manage Jenkins
+  * Configure System 
+  * Go to GitHub Section 
+  * Click Advanced 
+  * Check **Specify another hook URL for GitHub configuration** 
+  * Copy webhook URL
+
+2) Goto your github repository > Go **Setting** Tab > Click **Webhooks** > Click **Add Webhook**
+  * Past **webhook Url** in **Payload URL**
+  * Set **Content type = application/json**
+  * Choose **Just the push event**.
+> **Add Webhook**
