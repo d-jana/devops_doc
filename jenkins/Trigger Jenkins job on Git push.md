@@ -65,5 +65,6 @@ then you can see this popup window
 2) Goto your github repository > Go **Setting** Tab > Click **Webhooks** > Click **Add Webhook** >
   * Past **webhook Url** in **Payload URL**
   * Set **Content type = application/json**
-  * Choose **Just the push event**.
+  * Choose **Just the push event**
+  
  **Add Webhook**
