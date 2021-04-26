@@ -69,3 +69,11 @@ dipak@dipak-HP:~$ docker push jenkins.server:5000/quarkus/officechat
 dipak@dipak-HP:~$ docker pull jenkins.server:5000/quarkus/officechat
 ```
 
+### Access registry server API
+
+Get list of image
+```
+dipak@dipak-HP:~/certs$ curl --cacert ca.crt https://jenkins.server:5000/v2/_catalog
+{"repositories":["quarkus/officechat"]}
+```
+
