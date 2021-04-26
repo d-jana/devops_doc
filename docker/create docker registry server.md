@@ -26,8 +26,9 @@ must be use your host name ```jenkins.server``` as a CN (Common Name)
 
 5. Use following command to start registry container
 ```
-docker run -d --restart=always --name registry -v /certs:/certs -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/ca.crt -e REGISTRY_HTTP_TLS_KEY=/certs/ca.key -p5000:5000 registry
+docker run -d --restart=always --name registry -v /certs:/certs -v /mnt/registry:/var/lib/registry -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/ca.crt -e REGISTRY_HTTP_TLS_KEY=/certs/ca.key -p5000:5000 registry
 ```
+ * registry server store image in this location **/var/lib/registry**
 
 ### Setup other Docker host from which we do pull and push operation
 
@@ -69,11 +70,30 @@ dipak@dipak-HP:~$ docker push jenkins.server:5000/quarkus/officechat
 dipak@dipak-HP:~$ docker pull jenkins.server:5000/quarkus/officechat
 ```
 
-### Access registry server API
 
-Get list of image
+
+### show list of repo
+
 ```
 dipak@dipak-HP:~/certs$ curl --cacert ca.crt https://jenkins.server:5000/v2/_catalog
 {"repositories":["quarkus/officechat"]}
 ```
 
+### Delete a repo or tags from registry server
+
+1) delete repo directory
+```
+rm -rf /mnt/registry/docker/registry/v2/repositories/[repo name]
+
+                ------ for tags ------
+
+rm -rf /mnt/registry/docker/registry/v2/repositories/[repo name]/_manifests/tags/[tag]
+```
+2) run garbage collector
+```
+docker exec registry bin/registry garbage-collect --dry-run /etc/docker/registry/config.yml 
+```
+3) restart resgistry container
+```
+docker restart registry
+```
